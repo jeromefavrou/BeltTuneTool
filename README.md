@@ -1,2 +1,2 @@
 # BeltTuneTool
-BeltTune apporte unemesure de  tension des courroies
+BeltTune apporte une mesure de  tension des courroies

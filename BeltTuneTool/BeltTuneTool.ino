@@ -284,7 +284,7 @@ void tacheCore1(void * parameter)
         // Apprend le bruit de fond avant de lancer la detection nominale.
         if(!settingPanel->setting.LearnNoise)
         {
-            FFT->NoiseAquisition(settingPanel->setting.nNoise , 5);
+            FFT->NoiseAquisition(settingPanel->setting.nNoise , AppConfig::kBiasNoise);
 
             tftMultiCore.lock();
             settingPanel->setting.LearnNoise = true;

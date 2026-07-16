@@ -269,9 +269,8 @@ Par exemple :
 
 - GT2 6 mm
 - GT2 9 mm
-- HTD
-- Courroie CNC
-- Configuration personnelle
+- HTD 15 mm
+- ...
 
 Le changement de preset recharge instantanément les paramètres associés.
 
@@ -289,7 +288,7 @@ Cette valeur est utilisée pour calculer la tension.
 
 Plus elle est précise, plus la tension calculée sera exacte.
 
-Des valeurs prédéfinit dans les pré-set sont définit , néamoins le mieux reste de pesé la courroie et de ramené sont poid au metre
+Des valeurs prédéfinit dans les pré-set sont définit , néamoins le mieux reste de peser la courroie et de ramené sont poid au metre
 
 ---
 
@@ -401,7 +400,7 @@ La masse linéique peut être obtenue :
 
 Pour cela :
 
-1. couper un morceau de courroie de longueur connue ;
+1. courroie de longueur connue ;
 2. le peser avec une balance précise ;
 3. calculer :
 
@@ -432,6 +431,7 @@ Cette méthode permet souvent d'obtenir une meilleure précision lorsque la docu
 6. Attendre la fin de l'acquisition.
 7. Lire la fréquence détectée.
 8. Lire la tension calculée.
+9. Répété 3 fois et validé avec un ecart type faible
 
 ---
 

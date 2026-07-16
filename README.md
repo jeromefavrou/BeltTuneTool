@@ -65,18 +65,67 @@ La fréquence détectée est ensuite utilisée pour calculer automatiquement la 
 
 # Matériel
 
-Le projet est basé sur :
+Pour réaliser un BeltTuneTool, les composants suivants sont nécessaires.
 
-- ESP32
-- Microphone
-- Écran TFT couleur
-- 3 boutons
-- PCB dédié
-- Boîtier imprimé en 3D
+## Électronique
+
+| Quantité | Désignation |
+|----------:|-------------|
+| 1 | ESP32 DEV |
+| 1 | NMP441 Module de Microphone Omnidirectionnel, Microphone à Interface I2S Sortie MEMS  |
+| 1 | Module d'affichage TFT IPS 1,3" 240×240 pixels, contrôleur **ST7789**, interface SPI, alimentation 3,3 V |
+| 1 | Support de batterie **AZDelivery 18650** avec chargeur intégré (Micro-USB, sortie 5 V / 3 V) |
+| 1 | Accumulateur Li-Ion **18650** |
+| 3 | Boutons poussoirs **KEY-TH_4P-L6.0-W6.0-P4.50-LS6.5** |
+| 2 | Résistances **100 kΩ** |
+| 3 | Condensateurs céramique **100 nF** au format **0805** |
+| 2 | Barrettes femelles **HDR-F-2.54**, 15 broches |
+| 2 | Barrettes femelles **HDR-F-2.54**, 3 broches |
+| 1 | Barrette femelle **HDR-F-2.54**, 8 broches |
 
 ---
 
-# Assemblage
+## Circuit imprimé
+
+Le PCB personnalisé est fourni dans le dossier :
+
+```
+Hardware/
+```
+
+Vous y trouverez :
+
+- le schéma électronique ;
+- les fichiers Gerber ;
+- les fichiers de perçage.
+
+Il suffit de faire fabriquer le PCB auprès du fabricant de votre choix.
+
+---
+
+## Pièces imprimées en 3D
+
+Les trois pièces du boîtier sont disponibles dans le dossier :
+
+```
+3D Models/
+```
+
+Les formats suivants sont fournis :
+
+- STL
+- STEP
+- GCode
+
+Les trois pièces à imprimer sont :
+
+- Face avant
+- Corps du boîtier
+- Couvercle arrière
+
+Une fois imprimées, elles permettent de monter l'ensemble de l'électronique sans modification.
+
+---
 
 ## Ensemble des pièces
 

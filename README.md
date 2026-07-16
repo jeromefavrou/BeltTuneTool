@@ -325,15 +325,169 @@ Ils seront automatiquement restaurés au prochain démarrage.
 
 # Mesure d'une courroie
 
-1. Sélectionner le preset adapté.
-2. Vérifier la longueur libre (**L**).
-3. Vérifier la masse linéique (**Mu**).
-4. Régler le seuil si nécessaire.
+## Préparation
+
+Pour obtenir une mesure fiable, il est indispensable que les paramètres correspondent à la courroie mesurée.
+
+Les deux paramètres les plus importants sont :
+
+- **μ (Mu)** : masse linéique de la courroie (kg/m)
+- **L** : longueur libre entre les deux points de fixation (m)
+
+> **Important**
+>
+> La fréquence mesurée est indépendante de ces paramètres, mais **la tension calculée ne sera correcte que si les valeurs de μ et L sont exactes**.
+
+Si ces valeurs sont erronées, la fréquence affichée restera correcte, mais la tension calculée sera fausse.
+
+---
+
+## Déterminer la masse linéique (μ)
+
+La masse linéique peut être obtenue :
+
+- à partir de la documentation du fabricant ;
+- ou en la mesurant directement.
+
+Pour cela :
+
+1. couper un morceau de courroie de longueur connue ;
+2. le peser avec une balance précise ;
+3. calculer :
+
+```
+μ = Masse / Longueur
+```
+
+Exemple :
+
+- longueur : 1 m
+- masse : 0,038 kg
+
+```
+μ = 0,038 kg/m
+```
+
+Cette méthode permet souvent d'obtenir une meilleure précision lorsque la documentation constructeur n'est pas disponible.
+
+---
+
+## Réaliser une mesure
+
+1. Charger un preset ou régler les paramètres.
+2. Vérifier **μ** et **L**.
+3. Effectuer une acquisition de bruit si nécessaire.
+4. Placer le microphone à quelques millimètres de la courroie.
 5. Pincer la courroie.
 6. Attendre la fin de l'acquisition.
-7. Lire la fréquence.
+7. Lire la fréquence détectée.
 8. Lire la tension calculée.
 
+---
+
+# Acquisition du bruit
+
+L'acquisition du bruit permet au BeltTuneTool de mesurer le niveau sonore ambiant afin d'améliorer la détection de la vibration de la courroie.
+
+Pour obtenir un résultat optimal :
+
+- approcher le microphone à seulement quelques millimètres de la courroie ;
+- laisser la courroie parfaitement immobile ;
+- **éteindre tous les moteurs**, ventilateurs, broches et autres sources de vibrations ;
+- éviter toute manipulation pendant l'acquisition.
+
+Plus le bruit de référence est représentatif de l'environnement réel, plus la détection sera robuste.
+
+---
+
+# Comprendre le graphe FFT
+
+Après chaque mesure, le BeltTuneTool analyse le signal sonore grâce à une FFT (Fast Fourier Transform).
+
+Le graphe représente :
+
+- l'axe horizontal : la fréquence (Hz)
+- l'axe vertical : l'amplitude du signal
+
+Chaque pic correspond à une composante fréquentielle présente dans la vibration de la courroie.
+
+La fréquence recherchée est la **fréquence fondamentale**, c'est-à-dire la première fréquence de vibration de la courroie.
+
+Les autres pics sont appelés **harmoniques**.
+
+Par exemple :
+
+```
+Amplitude
+
+│
+│                  ▲ Harmonique 3
+│
+│          ▲ Harmonique 2
+│
+│   ▲ Fondamentale
+│
+└──────────────────────────────────
+    50      100      150      Hz
+```
+
+Dans un cas idéal, la fondamentale est le pic le plus élevé.
+
+Cependant, selon :
+
+- le matériau de la courroie ;
+- sa largeur ;
+- sa tension ;
+- la position où elle est pincée ;
+- la position du microphone ;
+
+certaines harmoniques peuvent devenir plus importantes que la fondamentale.
+
+Le BeltTuneTool utilise donc plusieurs paramètres afin d'identifier automatiquement la bonne fréquence.
+
+---
+
+# Mesures à basse fréquence
+
+La mesure des basses fréquences est plus délicate.
+
+Sous **60 Hz**, même si une calibration spécifique est appliquée, il est fréquent que :
+
+- la fondamentale soit moins énergétique que la deuxième ou troisième harmonique ;
+- certaines résonances mécaniques deviennent plus importantes que la vibration principale.
+
+L'algorithme tente de retrouver automatiquement la fondamentale en analysant les relations entre les différents pics, mais cette situation reste physiquement plus difficile.
+
+---
+
+# Limites du capteur
+
+Le microphone MEMS possède naturellement une sensibilité réduite dans les très basses fréquences.
+
+En pratique :
+
+- **au-dessus de 60 Hz** : fonctionnement optimal ;
+- **entre 30 et 60 Hz** : les mesures restent possibles mais demandent davantage de précautions ;
+- **en dessous de 30 Hz** : les performances du capteur deviennent limitées et la détection peut être moins fiable.
+
+Pour les très faibles fréquences, il est recommandé :
+
+- de placer le microphone très près de la courroie ;
+- d'éliminer toute source de vibration parasite ;
+- de réaliser plusieurs mesures afin de vérifier leur cohérence.
+
+---
+
+# Conseils pour une mesure fiable
+
+- Utiliser la bonne masse linéique (**μ**).
+- Mesurer précisément la longueur libre (**L**).
+- Réaliser une acquisition du bruit avant les premières mesures.
+- Positionner le microphone à quelques millimètres de la courroie.
+- Pincer toujours la courroie de manière similaire.
+- Éviter de toucher la machine pendant la mesure.
+- Couper les moteurs et les ventilateurs lorsque cela est possible.
+- Réaliser plusieurs acquisitions et comparer les résultats.
 ---
 
 # Fichiers Hardware

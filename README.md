@@ -231,23 +231,14 @@ C'est l'écran utilisé pendant les mesures.
 
 ![Start](img/Aquisition_start.jpg)
 
-L'appareil attend que la courroie soit pincée.
-
-Lorsque le niveau sonore dépasse le seuil défini, l'acquisition démarre automatiquement.
-
----
-
-## Acquisition
-
+L'appareil quelque seconde avant de commencer l'apprentissage du bruit de fond
 ![Acquisition](img/Aquisition_en_cour.jpg)
+Evité les bruit qui ne sont lier a l'environement.
 
-Pendant cette phase :
+Ne pas parler , evité les radio-musique
 
-- acquisition audio
-- calcul FFT
-- recherche du pic principal
-- calcul de la fréquence
-- calcul de la tension
+De préférence resté proche de la courroie ( quelque mm )
+
 
 ---
 

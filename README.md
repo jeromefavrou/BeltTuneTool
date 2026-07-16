@@ -170,8 +170,8 @@ Cet écran affiche :
 
 - fréquence détectée
 - tension calculée
-- état de la mesure
-- paramètres principaux
+- Score en dB
+- ecart type des 3 derniere mesure en dB
 
 C'est l'écran utilisé pendant les mesures.
 

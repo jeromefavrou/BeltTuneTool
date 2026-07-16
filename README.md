@@ -232,7 +232,9 @@ C'est l'écran utilisé pendant les mesures.
 ![Start](img/Aquisition_start.jpg)
 
 L'appareil quelque seconde avant de commencer l'apprentissage du bruit de fond
+
 ![Acquisition](img/Aquisition_en_cour.jpg)
+
 Evité les bruit qui ne sont lier a l'environement.
 
 Ne pas parler , evité les radio-musique

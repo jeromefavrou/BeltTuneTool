@@ -82,6 +82,7 @@ Pour réaliser un BeltTuneTool, les composants suivants sont nécessaires.
 | 2 | Barrettes femelles **HDR-F-2.54**, 15 broches |
 | 2 | Barrettes femelles **HDR-F-2.54**, 3 broches |
 | 1 | Barrette femelle **HDR-F-2.54**, 8 broches |
+| 1 | Mousse auto adhesive a mettre entre les carte |
 
 ---
 

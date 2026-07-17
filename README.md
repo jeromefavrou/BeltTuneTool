@@ -188,12 +188,11 @@ Selon votre installation :
 
 - TFT_eSPI
 - arduinoFFT
-- Preferences / EEPROM
-- SPI
-- Wire
 
 Sélectionner une carte ESP32 compatible puis compiler le projet.
-
+- TFT_eSPI doit etre configuré dans "User_Setup.h"
+- ArduinoFFT doit etre dans ca version générique
+- des version deja compatible sont disponible dans /BeltTune/Lib
 ---
 
 # Utilisation
@@ -265,7 +264,7 @@ Par exemple :
 - HTD 15 mm
 - ...
 
-Le changement de preset recharge instantanément les paramètres associés.
+Le changement de preset recharge apres validation les paramètres associés.
 
 ---
 
@@ -556,7 +555,7 @@ permettant de reconstruire entièrement l'appareil.
 ```
 BeltTuneTool
 │
-├── BeltTuneTool/        Code source Arduino
+├── BeltTuneTool/        Code source Arduino + Lib
 ├── Hardware/            PCB + schéma
 ├── 3D Models/           STL / STEP / GCode
 ├── img/                 Documentation
